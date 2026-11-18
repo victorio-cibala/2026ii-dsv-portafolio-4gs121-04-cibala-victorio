@@ -1,39 +1,39 @@
+<!-- file: site/alumnos/apellidos-nombre/about-apellidos-nombre.html -->
+<!--
+  PLANTILLA DE PERFIL — HTML
+  ──────────────────────────────────────────────────────────────
+  ESTA ES LA PLANTILLA. No la edites: copia la carpeta completa
+  site/alumnos/apellidos-nombre/ y renómbrala con tus datos.
+
+  Qué editar en tu copia:
+    • Este comentario de la primera línea (la ruta debe ser la tuya).
+    • El <title> y el <link> a tu hoja de estilos.
+    • Nombre, tagline y todos los marcadores con la forma {{TEXTO}}.
+    • Las cuatro rutas de la fotografía (src y srcset).
+  Qué NO cambiar:
+    • Estructura (header / aside / main / footer).
+    • Rutas a los logos institucionales (../../assets/img/).
+
+  Nombres de archivo de tu copia, si te llamas Juan Pérez:
+    about-perez-juan.html
+    assets/css/about-perez-juan.css
+    assets/img/foto-perez-juan-{160,320,480,640}.webp
+-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8">
-    <!-- file: docs/index.html -->
-    <!--
-      PÁGINA PERSONAL — portada del portafolio
-      ──────────────────────────────────────────────────────────────
-      Si ya hiciste tu perfil en el Laboratorio 1, trae aquí su
-      contenido. Las rutas de esta página ya están ajustadas al
-      portafolio; no copies las del laboratorio, que usaban ../../
-
-      Qué editar:
-        • El <title>, el <link> a tu hoja de estilos y la descripción.
-        • Nombre, tagline y todos los marcadores con la forma {{TEXTO}}.
-        • Las cuatro rutas de la fotografía (src y srcset).
-      Qué NO cambiar:
-        • Estructura (header / aside / main / footer).
-        • El enlace "Mis entregas" (./modulos/index.html).
-        • Rutas a los logos institucionales (./assets/img/).
-
-      Nombres de archivo, si te llamas Juan Pérez:
-        assets/css/about-perez-juan.css
-        assets/img/foto-perez-juan-{160,320,480,640}.webp
-      Borra este comentario cuando termines.
-    -->
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Nombre Apellidos — Perfil</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Victorio Cibala — Perfil</title>
 
     <!-- CSS específico de esta página -->
-    <link rel="stylesheet" href="./assets/css/about-apellidos-nombre.css">
+    <link rel="stylesheet" href="./assets/css/about-cibala-victorio.css" />
 
     <!-- Descripción breve (práctica de metadatos/SEO) -->
     <meta
       name="description"
-      content="Perfil de estudiante — Licenciatura en Desarrollo y Gestión de Software (UTP FISC Veraguas)">
+      content="Perfil de estudiante — Licenciatura en Desarrollo y Gestión de Software (UTP FISC Veraguas)"
+    />
   </head>
   <body>
     <!-- Contenedor principal (layout en Grid definido en el CSS) -->
@@ -45,14 +45,14 @@
             <nav class="tabs-left" aria-label="Navegación">
               <a href="./modulos/index.html" class="tab-link is-active">
                 <span class="ico" aria-hidden="true">&#8962;</span>
-                <span class="label">Mis entregas</span>
+                <span class="label">Inicio</span>
               </a>
             </nav>
           </div>
 
           <!-- EDITA: nombre y tagline -->
-          <h1 class="nombre">Nombre Apellidos</h1>
-          <p class="tagline">Estudiante de Desarrollo de Software · {{GRUPO}}-{{NN}}</p>
+          <h1 class="nombre">Victorio Cibala</h1>
+          <p class="tagline">Licenciado en Desarrollo y Gestión de Software</p>
         </div>
 
         <!-- Logos institucionales (no cambiar rutas) -->
@@ -60,11 +60,13 @@
           <img
             class="logo"
             src="./assets/img/logo-utp.svg"
-            alt="Logo UTP">
+            alt="Logo UTP"
+          />
           <img
             class="logo"
             src="./assets/img/logo-fisc.svg"
-            alt="Logo FISC">
+            alt="Logo FISC"
+          />
         </div>
       </header>
 
@@ -72,19 +74,20 @@
       <aside class="sidebar">
         <figure class="perfil">
           <img
-            src="./assets/img/foto-apellidos-nombre-480.webp"
+            src="./assets/img/foto-cibala-victorio-480.webp"
             srcset="
-              ./assets/img/foto-apellidos-nombre-160.webp 160w,
-              ./assets/img/foto-apellidos-nombre-320.webp 320w,
-              ./assets/img/foto-apellidos-nombre-480.webp 480w,
-              ./assets/img/foto-apellidos-nombre-640.webp 640w
+              ./assets/img/foto-cibala-victorio-160.webp 160w,
+              ./assets/img/foto-cibala-victorio-320.webp 320w,
+              ./assets/img/foto-cibala-victorio-480.webp 480w,
+              ./assets/img/foto-cibala-victorio-640.webp 640w
             "
             sizes="(max-width: 700px) 128px, 160px"
-            alt="Nombre Apellidos, estudiante de LDGS UTP FISC Veraguas"
+            alt="Victorio Cibala, estudiante de LDGS UTP FISC Veraguas"
             width="160"
             height="160"
             loading="lazy"
-            decoding="async">
+            decoding="async"
+          />
           <figcaption>
             Licenciatura en Desarrollo y Gestión de Software
           </figcaption>
@@ -94,16 +97,13 @@
           <h2>Contacto</h2>
           <ul class="lista-contacto">
             <li>
-              <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+              <a href="mailto:victorio.cibala@utp.ac.pa">victorio.cibala@utp.ac.pa</a>
             </li>
             <li>
-              <a target="_blank" rel="noopener noreferrer" href="{{LINKEDIN}}">LinkedIn</a>
+              <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/victorio-cibala">LinkedIn</a>
             </li>
             <li>
-              <a target="_blank" rel="noopener noreferrer" href="{{GITHUB}}">GitHub</a>
-            </li>
-            <li>
-              <a href="./modulos/index.html">Mis entregas del curso</a>
+              <a target="_blank" rel="noopener" href="https://github.com/victorio-cibala">GitHub</a>
             </li>
           </ul>
         </section>
@@ -115,29 +115,32 @@
           <h3>Lenguajes</h3>
           <div class="chips">
             <span class="chip">Java</span>
-            <span class="chip">JavaScript</span>
-            <span class="chip">Python</span>
+            <span class="chip">C++</span>
+            <span class="chip">C#</span>
             <span class="chip">SQL</span>
           </div>
 
           <h3>Frameworks & Librerías</h3>
           <div class="chips">
-            <span class="chip">Spring Boot</span>
-            <span class="chip">React</span>
-            <span class="chip">Node.js</span>
+            <span class="chip">Java Swing</span>
+            <span class="chip">C# Windows Forms</span>
+            <span class="chip">SFML</span>
           </div>
 
           <h3>Bases de datos</h3>
           <div class="chips">
             <span class="chip">MySQL</span>
-            <span class="chip">PostgreSQL</span>
+            <span class="chip">SQL SERVER</span>
+            <span class="chip">MariaDB</span>
           </div>
 
           <h3>Herramientas</h3>
           <div class="chips">
             <span class="chip">Git</span>
-            <span class="chip">Docker</span>
-            <span class="chip">Postman</span>
+            <span class="chip">Visual Studio Code</span>
+            <span class="chip">Visual Studio</span>
+            <span class="chip">Apache NetBeans</span>
+            <span class="chip">Podman</span>
             <span class="chip">Figma</span>
           </div>
 
@@ -153,25 +156,24 @@
       <main class="contenido">
         <section class="resumen card">
           <h2>Acerca de mí</h2>
-          <p>{{RESUMEN_BREVE_ELEVATOR_PITCH}}</p>
+          <p>Soy un estudiante de la Licenciatura en Desarrollo y Gestión de Software en la Universidad Tecnológica de Panamá Centro Regional de Veraguas, enfocado en el desarrollo de aplicaciones robustas, bases de datos y la resolución de problemas lógicos mediante programación orientada a objetos</p>
         </section>
 
         <!-- Duplica <article.proyecto> por cada proyecto -->
         <section class="proyectos card">
           <h2>Proyectos destacados</h2>
           <div class="proyectos-flex">
-            <article class="proyecto">
-              <header class="proyecto-head">
-                <h3>{{NOMBRE_PROYECTO}}</h3>
-                <div class="proyecto-links">
-                  <a target="_blank" rel="noopener noreferrer" href="{{URL_GITHUB}}">Código</a>
-                  <a target="_blank" rel="noopener noreferrer" href="{{URL_DEMO}}">Demo</a>
-                </div>
-              </header>
-              <p>{{DESCRIPCION_PROYECTO}}</p>
-              <p class="rol"><strong>Rol:</strong> {{ROL}}</p>
-              <p class="tech"><strong>Tecnologías:</strong> {{TECNOLOGIAS}}</p>
-            </article>
+          <article class="proyecto">
+            <header class="proyecto-head">
+              <h3>Sistema de Trazabilidad de la Cadena de Suministro de Café</h3>
+              <div class="proyecto-links">
+                <a target="_blank" rel="noopener" href="https://github.com/Victorio-cibala">Código</a>
+              </div>
+            </header>
+            <p>Propuesta de sistema offline-first orientada a la trazabilidad del café desde la finca hasta el punto de venta final, diseñada para optimizar los procesos logísticos y de inventario en áreas con conectividad limitada en Chiriquí y Veraguas.</p>
+            <p class="rol"><strong>Rol:</strong> Desarrollador y Gestor de Software</p>
+            <p class="tech"><strong>Tecnologías:</strong> Modelado UML, Bases de Datos Relacionales, Arquitectura Offline-First</p>
+          </article>
           </div>
         </section>
 
@@ -180,9 +182,9 @@
           <ul class="timeline">
             <li>
               <div class="item">
-                <h3>{{CARGO}} — {{ORGANIZACION}}</h3>
-                <span class="meta">{{FECHA}}</span>
-                <p>{{RESPONSABILIDADES_LOGROS}}</p>
+                <h3>Desarrollador de Proyectos Académicos en la Universidad Tecnológica de Panamá</h3>
+                <span class="meta">2025 : Presente</span>
+                <p>Diseño y desarrollo de aplicaciones de escritorio y sistemas de bases de datos utilizando Java, C#, MySQL y SQL Server, aplicando arquitectura de software.</p>
               </div>
             </li>
           </ul>
@@ -192,8 +194,8 @@
           <h2>Educación</h2>
           <ul class="listado-simple">
             <li>
-              <strong>Licenciatura en Desarrollo y Gestión de Software</strong>
-              — UTP, Centro Regional de Veraguas ({{ANIO_INICIO}}–{{ANIO_FIN}})
+              <strong>Licenciatura en Desarrollo y Gestión de Software</strong> 
+                UTP, Centro Regional de Veraguas (2025 : 2028)
             </li>
           </ul>
         </section>
@@ -201,16 +203,16 @@
         <section class="certificaciones card">
           <h2>Certificaciones y Cursos</h2>
           <ul class="listado-simple">
-            <li>{{CERTIFICACION_1}}</li>
-            <li>{{CURSO_1}}</li>
-          </ul>
+            <!-- <li>{{CERTIFICACION_1}}</li> -->
+            <!-- <li>{{CURSO_1}}</li> -->
+          </ul>    
         </section>
 
         <section class="extra card">
           <h2>Logros · Artículos · Intereses</h2>
           <ul class="listado-simple">
-            <li>{{LOGRO_O_ARTICULO}}</li>
-          </ul>
+            <!-- <li>{{LOGRO_O_ARTICULO}}</li>-->
+          </ul> 
         </section>
       </main>
 
