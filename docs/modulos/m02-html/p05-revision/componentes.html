@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+    script-src 'self';
+    style-src 'self' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    img-src 'self';
+    media-src 'self';
+    object-src 'self';
+    frame-src 'self' https://www.openstreetmap.org;
+    base-uri 'self';
+    form-action 'self'">
+  <meta name="description" content="Guía de componentes y recursos incrustados de la Clínica Veterinaria ConSentidos.">
+  <title>Guía de componentes | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+  <script src="assets/js/componentes.js" defer></script>
+</head>
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="48" height="48">
+    <hgroup>
+      <h1>Guía de componentes</h1>
+      <p>Clínica Veterinaria ConSentidos</p>
+    </hgroup>
+    <p>Victorio Cibala · 4GS121-04</p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="cita.html">Solicitar cita</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <section id="documento-pdf">
+      <h2>Guía de vacunación en PDF</h2>
+      <p>Consulta el documento incrustado directamente en la página:</p>
+      <object data="assets/docs/guia-vacunacion.pdf" type="application/pdf" width="100%" height="500"
+        aria-label="Guía de vacunación de ConSentidos, en PDF">
+        <p>
+          No se puede mostrar el PDF en este navegador. Puedes abrirlo desde
+          <a href="assets/docs/guia-vacunacion.pdf" target="_blank" rel="noopener noreferrer">este enlace al PDF</a>.
+        </p>
+      </object>
+    </section>
+
+    <section id="mapa-ubicacion">
+      <h2>Ubicación de la clínica</h2>
+      <p>Mapa de referencia en Santiago de Veraguas:</p>
+      <iframe
+        title="Mapa de ubicación de la Clínica Veterinaria ConSentidos en Santiago de Veraguas"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-80.9900%2C8.0900%2C-80.9600%2C8.1150&amp;layer=mapnik"
+        width="600" height="400" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Recordatorio</h2>
+    <p>Verifica siempre que los elementos incrustados cuenten con descripciones y nombres accesibles.</p>
+  </aside>
+
+  <footer>
+    <p>Clínica Veterinaria ConSentidos — Santiago de Veraguas, Panamá</p>
+    <p>
+      Correo: <a href="mailto:contacto@consentidos.pa">contacto@consentidos.pa</a> ·
+      Teléfono: <a href="tel:+50760000000">+507 6000-0000</a>
+    </p>
+    <p><a href="#inicio">Volver arriba</a></p>
+  </footer>
+</body>
+</html>

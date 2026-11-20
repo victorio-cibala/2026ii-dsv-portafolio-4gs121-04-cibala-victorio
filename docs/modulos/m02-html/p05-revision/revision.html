@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     Informe de revisión de ConSentidos
+     Práctica 5 · Secciones 2.10 y 2.11 de la Unidad 2.
+     Archivo base: completa las partes marcadas con comentarios y pon la
+     fecha real de tu revisión en los dos elementos time.
+     ===================================================================== -->
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Paso 4: aquí va la misma política de seguridad que en las demás páginas -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';
+    script-src 'self';
+    style-src 'self' https://fonts.googleapis.com;
+    font-src https://fonts.gstatic.com;
+    img-src 'self';
+    media-src 'self';
+    object-src 'self';
+    frame-src 'self' https://www.openstreetmap.org;
+    base-uri 'self';
+    form-action 'self'">
+  <meta name="description"
+        content="Informe de revisión de seguridad y calidad del sitio de la Clínica Veterinaria ConSentidos.">
+  <meta name="author" content="Victorio Cibala">
+  <title>Informe de revisión | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+</head>
+
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="64" height="64">
+
+    <hgroup>
+      <h1>Informe de revisión</h1>
+      <p>Seguridad y calidad del sitio</p>
+    </hgroup>
+
+    <!-- Tus datos: siempre arriba, nunca en el pie -->
+    <p>
+      Victorio Cibala<br>
+      4GS121-04
+    </p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="cita.html">Solicitar cita</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+      <li><a href="revision.html">Informe de revisión</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+
+    <p>
+      Revisión del sitio completo, hecha el
+      <time datetime="2026-11-20">20 de noviembre de 2026</time>. Se
+      comprobaron las páginas del sitio y este informe.
+    </p>
+
+    <!-- =================================================================
+1. LA POLÍTICA DE SEGURIDAD DE CONTENIDOS
+         ================================================================= -->
+    <section id="csp">
+      <h2>Política de seguridad de contenidos</h2>
+
+      <p>
+        Construí la política partiendo de una base restrictiva con <code>'self'</code> para limitar el origen de los recursos y habilitando únicamente los dominios externos necesarios para las fuentes tipográficas y el mapa incrustado. Al no incluir <code>'unsafe-inline'</code> en <code>script-src</code>, queda bloqueada la ejecución de scripts en línea.
+      </p>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-csp">
+        <table>
+          <caption id="cap-csp">Directivas de la política y por qué están</caption>
+          <thead>
+            <tr>
+              <th scope="col">Directiva</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Por qué</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>default-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Regla por defecto: solo recursos del propio sitio.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>script-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Permite solo scripts locales y bloquea scripts en línea no autorizados.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>style-src</code></th>
+              <td><code>'self' https://fonts.googleapis.com</code></td>
+              <td>Permite hojas de estilo locales y las de Google Fonts.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>font-src</code></th>
+              <td><code>https://fonts.gstatic.com</code></td>
+              <td>Autoriza la carga de archivos de fuentes desde Google Fonts.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>img-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Restringe las imágenes al propio origen del sitio.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>media-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Limita los recursos multimedia locales al mismo origen.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>object-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Permite incrustar documentos locales como el PDF de vacunación y bloquea objetos externos.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>frame-src</code></th>
+              <td><code>'self' https://www.openstreetmap.org</code></td>
+              <td>Autoriza marcos locales y el mapa incrustado de OpenStreetMap.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>base-uri</code></th>
+              <td><code>'self'</code></td>
+              <td>Evita que se manipule la etiqueta <code>&lt;base&gt;</code> hacia otro origen.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>form-action</code></th>
+              <td><code>'self'</code></td>
+              <td>Restringe el envío de formularios únicamente al mismo origen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <code>frame-ancestors</code> no está activa mediante la etiqueta <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code> porque los navegadores ignoran esa directiva cuando se define dentro de un elemento <code>&lt;meta&gt;</code>; para que tenga efecto real debe enviarse desde una cabecera HTTP del servidor.
+      </p>
+    </section>
+
+    <!-- =================================================================
+2. LA LISTA DE VERIFICACIÓN DE LA SECCIÓN 2.11.4
+         ================================================================= -->
+    <section id="verificacion">
+      <h2>Lista de verificación</h2>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-verificacion">
+        <table>
+          <caption id="cap-verificacion">Comprobaciones en las siete páginas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Comprobación</th>
+              <th scope="col">Resultado</th>
+              <th scope="col">Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Validan sin errores en validator.w3.org</th>
+              <td>Revisado</td>
+              <td>Estructura HTML revisada en las páginas del proyecto; conviene confirmar la validación final de cada archivo en el validador.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un solo <code>h1</code> y jerarquía sin saltos</th>
+              <td>Cumple</td>
+              <td>Cada vista mantiene su encabezado principal y jerarquía de títulos ordenada.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>alt</code> en las imágenes y <code>title</code> en los <code>iframe</code></th>
+              <td>Cumple</td>
+              <td>Imágenes con atributo <code>alt</code> (vacío en decorativas como el logo) y el <code>iframe</code> del mapa en <code>componentes.html</code> tiene <code>title</code> descriptivo.</td>
+            </tr>
+            <tr>
+              <th scope="row">Cada control con <code>label</code> y <code>name</code></th>
+              <td>Revisado</td>
+              <td>Controles interactivos y formularios revisados para mantener etiquetas e identificadores asociados.</td>
+            </tr>
+            <tr>
+              <th scope="row">Tablas con <code>caption</code> y <code>scope</code></th>
+              <td>Cumple</td>
+              <td>Las tablas de este informe incluyen <code>caption</code> y encabezados con <code>scope</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Enlaces a otra pestaña con <code>rel="noopener noreferrer"</code></th>
+              <td>Cumple</td>
+              <td>Los enlaces con <code>target="_blank"</code> (como el respaldo del PDF en <code>componentes.html</code>) incluyen <code>rel="noopener noreferrer"</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Recorrido completo con el teclado y foco visible</th>
+              <td>Cumple</td>
+              <td>Se incluyen enlace de salto al contenido, navegación accesible y foco visible en controles y contenedores desplazables.</td>
+            </tr>
+            <tr>
+              <th scope="row">Nombres en minúsculas y rutas que funcionan publicadas</th>
+              <td>Cumple</td>
+              <td>Archivos y rutas relativas verificados en el servidor local (<code>127.0.0.1:5500</code>) y estructura de carpetas.</td>
+            </tr>
+            <tr>
+              <th scope="row">Consola sin errores de la política</th>
+              <td>Observación</td>
+              <td>La CSP bloqueó el script inline inyectado por Live Server en <code>index.html:91</code> (<code>script-src-elem</code>), confirmando que la restricción de scripts en línea funciona.</td>
+            </tr>
+            <tr>
+              <th scope="row">Accesibilidad en Lighthouse</th>
+              <td>100 / 100</td>
+              <td>En <code>index.html</code> se obtuvo Accesibilidad 100, SEO 100, Rendimiento 93 y Prácticas recomendadas 92.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- =================================================================
+3. LA DEMOSTRACIÓN DEL REQUIRED
+         ================================================================= -->
+    <section id="validacion-cliente">
+      <h2>La validación del navegador no protege</h2>
+
+      <p>
+        Al probar formularios o campos marcados con <code>required</code> en el navegador, el usuario puede alterar o desactivar la validación del lado del cliente desde las herramientas del desarrollador, modificar el DOM o enviar peticiones directas. Por ello concluyo que la validación en el navegador mejora la experiencia inmediata del usuario, pero nunca sustituye la validación y el control de integridad en el servidor.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      <strong>Clínica Veterinaria ConSentidos</strong><br>
+      Avenida Central, Santiago de Veraguas, Panamá<br>
+      <a href="tel:+50799800000">+507 998-0000</a> |
+      <a href="mailto:citas@consentidos.example">citas@consentidos.example</a>
+    </address>
+
+    <p>
+      Última actualización:
+      <time datetime="2026-11-20">20 de noviembre de 2026</time>.
+    </p>
+
+    <p><a href="#inicio">Volver arriba</a></p>
+
+    <p>
+      <small>
+        &copy; 2026 Clínica Veterinaria ConSentidos. Proyecto académico del
+        curso Desarrollo de Software V, Universidad Tecnológica de Panamá,
+        Centro Regional de Veraguas. Los datos de contacto son ficticios.
+      </small>
+    </p>
+  </footer>
+</body>
+
+</html>
