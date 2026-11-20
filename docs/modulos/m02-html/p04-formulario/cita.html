@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formulario de solicitud de cita de la Clínica Veterinaria ConSentidos: datos del propietario, de la mascota y de la cita.">
+  <title>Solicitar cita | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+  <script src="assets/js/cita.js" defer></script>
+</head>
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="48" height="48">
+    <hgroup>
+      <h1>Solicitar una cita</h1>
+      <p>Clínica Veterinaria ConSentidos</p>
+    </hgroup>
+    <p>Victorio Cibala · 4GS121-04</p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="cita.html">Solicitar cita</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <form action="/api/citas" method="post"
+      enctype="multipart/form-data"
+      name="solicitud-cita" autocomplete="on">
+      <fieldset>
+        <legend>Datos del propietario</legend>
+
+        <label for="nombre-propietario">Nombre completo *</label>
+        <input id="nombre-propietario" name="nombre_propietario" type="text"
+          autocomplete="name" minlength="5" maxlength="60"
+          placeholder="Ana Lucía Moreno Díaz" required>
+
+        <label for="cedula">Cédula *</label>
+        <input id="cedula" name="cedula" type="text"
+          pattern="[0-9]{1,2}-[0-9]{3,4}-[0-9]{1,6}"
+          title="Formato: 8-123-456"
+          inputmode="numeric"
+          aria-describedby="ayuda-cedula" required>
+        <p id="ayuda-cedula">Escríbala con guiones, por ejemplo 8-123-456.</p>
+
+        <label for="correo">Correo electrónico *</label>
+        <input id="correo" name="correo" type="email"
+          autocomplete="email"
+          placeholder="nombre@ejemplo.com" required>
+
+        <label for="telefono">Teléfono *</label>
+        <input id="telefono" name="telefono" type="tel"
+          autocomplete="tel"
+          pattern="[0-9]{4}-[0-9]{4}"
+          title="Formato: 6000-0000"
+          inputmode="tel" required>
+
+        <label for="sitio">Sitio web o red social (opcional)</label>
+        <input id="sitio" name="sitio" type="url" placeholder="https://">
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos de la mascota</legend>
+
+        <label for="especie">Especie *</label>
+        <select id="especie" name="especie" required>
+          <option value="">Seleccione una opción</option>
+          <optgroup label="Caninos">
+            <option value="perro-pequeno">Perro pequeño</option>
+            <option value="perro-mediano">Perro mediano</option>
+            <option value="perro-grande">Perro grande</option>
+          </optgroup>
+          <optgroup label="Felinos">
+            <option value="gato">Gato</option>
+          </optgroup>
+          <optgroup label="Otros">
+            <option value="conejo">Conejo</option>
+            <option value="ave">Ave</option>
+          </optgroup>
+        </select>
+
+        <label for="raza">Raza</label>
+        <input id="raza" name="raza" type="text" list="razas"
+          aria-describedby="ayuda-raza">
+        <p id="ayuda-raza">Puede elegir una de la lista o escribir otra.</p>
+        <datalist id="razas">
+          <option value="Criollo">
+          <option value="Labrador">
+          <option value="Pastor alemán">
+          <option value="Siamés">
+        </datalist>
+
+        <label for="nacimiento">Fecha de nacimiento aproximada</label>
+        <input id="nacimiento" name="nacimiento" type="date"
+          min="2005-01-01" max="2026-12-31">
+
+        <label for="peso">Peso en kilogramos *</label>
+        <input id="peso" name="peso" type="number"
+          min="0.5" max="90" step="0.1"
+          aria-describedby="ayuda-peso" required>
+        <p id="ayuda-peso">Entre 0.5 y 90 kg, con un decimal.</p>
+
+        <label for="color-pelaje">Color predominante del pelaje</label>
+        <input id="color-pelaje" name="color_pelaje" type="color"
+          value="#6b4423">
+
+        <label for="carnet">Carnet de vacunación (PDF o imagen)</label>
+        <input id="carnet" name="carnet" type="file" accept=".pdf,image/*">
+
+        <fieldset>
+          <legend>Sexo</legend>
+          <input id="sexo-macho" name="sexo" type="radio" value="macho" checked>
+          <label for="sexo-macho">Macho</label>
+          <input id="sexo-hembra" name="sexo" type="radio" value="hembra">
+          <label for="sexo-hembra">Hembra</label>
+        </fieldset>
+      </fieldset>
+
+      <fieldset>
+        <legend>Datos de la cita</legend>
+
+        <label for="fecha-cita">Fecha deseada *</label>
+        <input id="fecha-cita" name="fecha_cita" type="date" required>
+
+        <label for="hora-cita">Hora deseada *</label>
+        <input id="hora-cita" name="hora_cita" type="time"
+          min="08:00" max="17:00"
+          aria-describedby="ayuda-hora" required>
+        <p id="ayuda-hora">Horario de atención: de 8:00 a 17:00.</p>
+
+        <fieldset>
+          <legend>Modalidad</legend>
+          <input id="mod-clinica" name="modalidad" type="radio" value="clinica" checked>
+          <label for="mod-clinica">En la clínica</label>
+          <input id="mod-domicilio" name="modalidad" type="radio" value="domicilio">
+          <label for="mod-domicilio">A domicilio</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Servicios que necesita</legend>
+          <input id="serv-consulta" name="servicios" type="checkbox"
+            value="consulta" checked>
+          <label for="serv-consulta">Consulta general</label>
+          <input id="serv-vacuna" name="servicios" type="checkbox" value="vacuna">
+          <label for="serv-vacuna">Vacunación</label>
+          <input id="serv-unas" name="servicios" type="checkbox" value="unas">
+          <label for="serv-unas">Corte de uñas</label>
+        </fieldset>
+
+        <label for="urgencia">Nivel de urgencia</label>
+        <input id="urgencia" name="urgencia" type="range"
+          min="1" max="3" step="1" value="1"
+          aria-describedby="urgencia-texto">
+        <p><output id="urgencia-texto" for="urgencia">1 de 3 — Sin prisa</output></p>
+
+        <label for="medio">Medio de contacto preferido</label>
+        <select id="medio" name="medio">
+          <option value="telefono" selected>Llamada telefónica</option>
+          <option value="whatsapp">Mensaje de WhatsApp</option>
+          <option value="correo">Correo electrónico</option>
+        </select>
+
+        <label for="motivo">Motivo de la consulta *</label>
+        <textarea id="motivo" name="motivo" rows="4"
+          placeholder="Describa los síntomas o el motivo de la visita." required></textarea>
+
+        <label for="sede">Sede que atiende</label>
+        <input id="sede" name="sede" type="text"
+          value="ConSentidos — Santiago de Veraguas" readonly>
+
+        <input name="origen" type="hidden" value="formulario-web-2026">
+      </fieldset>
+
+      <p>
+        <button type="submit">Solicitar la cita</button>
+        <button type="reset">Borrar el formulario</button>
+      </p>
+    </form>
+  </main>
+
+  <aside>
+    <h2>Recordatorio</h2>
+    <p>Agenda tus controles con antelación y lleva el carné de vacunación a cada visita.</p>
+  </aside>
+
+  <footer>
+    <p>Clínica Veterinaria ConSentidos — Santiago de Veraguas, Panamá</p>
+    <p>
+      Correo: <a href="mailto:contacto@consentidos.pa">contacto@consentidos.pa</a> ·
+      Teléfono: <a href="tel:+50760000000">+507 6000-0000</a>
+    </p>
+    <p><a href="#inicio">Volver arriba</a></p>
+  </footer>
+</body>
+</html>

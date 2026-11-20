@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarifas de servicios, horario de atención y precios por especie de la Clínica Veterinaria ConSentidos.">
+  <title>Tarifas | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+</head>
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="48" height="48">
+    <hgroup>
+      <h1>Tarifas y horarios</h1>
+      <p>Clínica Veterinaria ConSentidos</p>
+    </hgroup>
+    <p>Victorio Cibala · 4GS121-04</p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <p>
+      Los precios incluyen la consulta y el informe escrito. Las urgencias fuera del horario tienen un recargo del 50%.
+    </p>
+
+    <section id="tarifario-servicios">
+      <h2>Tarifario de servicios</h2>
+      <p id="nota-tarifario">Precios en balboas, vigentes hasta diciembre de 2026.</p>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-tarifario">
+        <table aria-describedby="nota-tarifario">
+          <caption id="cap-tarifario">Tarifas de servicios 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Servicio</th>
+              <th scope="col">Perro</th>
+              <th scope="col">Gato</th>
+              <th scope="col">Duración</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Consulta general</th>
+              <td>B/. 25.00</td>
+              <td>B/. 22.00</td>
+              <td>30 minutos</td>
+            </tr>
+            <tr>
+              <th scope="row">Vacunación</th>
+              <td>B/. 18.00</td>
+              <td>B/. 16.00</td>
+              <td>15 minutos</td>
+            </tr>
+            <tr>
+              <th scope="row">Desparasitación</th>
+              <td>B/. 12.00</td>
+              <td>B/. 10.00</td>
+              <td>15 minutos</td>
+            </tr>
+            <tr>
+              <th scope="row">Corte de uñas</th>
+              <td>B/. 8.00</td>
+              <td>B/. 8.00</td>
+              <td>10 minutos</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Servicios listados</th>
+              <td colspan="3">4</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section id="horario-veterinarios">
+      <h2>Horario de los veterinarios</h2>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-horario">
+        <table id="cap-horario-tabla">
+          <caption id="cap-horario">Veterinarios de turno por jornada</caption>
+          <thead>
+            <tr>
+              <th scope="col">Jornada</th>
+              <th scope="col">Lunes a jueves</th>
+              <th scope="col">Viernes</th>
+              <th scope="col">Sábado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Mañana</th>
+              <td>Dra. Ortega</td>
+              <td>Dra. Ortega</td>
+              <td rowspan="2">Dr. Sanjur</td>
+            </tr>
+            <tr>
+              <th scope="row">Tarde</th>
+              <td colspan="2">Dr. Sanjur</td>
+            </tr>
+            <tr>
+              <th scope="row">Urgencias</th>
+              <td colspan="3">Turno rotativo, por teléfono</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tarifas-especie-consulta">
+      <h2>Tarifas por especie y tipo de consulta</h2>
+      <p id="nota-especie">La consulta de urgencia se atiende sin cita, con recargo.</p>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-especie">
+        <table aria-describedby="nota-especie">
+          <caption id="cap-especie">Tarifas por especie y tipo de consulta</caption>
+          <colgroup>
+            <col>
+            <col span="2">
+            <col span="2">
+          </colgroup>
+          <thead>
+            <tr>
+              <th id="h-servicio" scope="col" rowspan="2">Servicio</th>
+              <th id="h-perro" scope="colgroup" colspan="2">Perro</th>
+              <th id="h-gato" scope="colgroup" colspan="2">Gato</th>
+            </tr>
+            <tr>
+              <th id="h-perro-regular" scope="col">Regular</th>
+              <th id="h-perro-urgencia" scope="col">Urgencia</th>
+              <th id="h-gato-regular" scope="col">Regular</th>
+              <th id="h-gato-urgencia" scope="col">Urgencia</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th id="s-consulta" scope="row">Consulta</th>
+              <td headers="s-consulta h-perro h-perro-regular">B/. 25.00</td>
+              <td headers="s-consulta h-perro h-perro-urgencia">B/. 40.00</td>
+              <td headers="s-consulta h-gato h-gato-regular">B/. 22.00</td>
+              <td headers="s-consulta h-gato h-gato-urgencia">B/. 36.00</td>
+            </tr>
+            <tr>
+              <th id="s-vacunacion" scope="row">Vacunación</th>
+              <td headers="s-vacunacion h-perro h-perro-regular">B/. 18.00</td>
+              <td headers="s-vacunacion h-perro h-perro-urgencia">B/. 27.00</td>
+              <td headers="s-vacunacion h-gato h-gato-regular">B/. 16.00</td>
+              <td headers="s-vacunacion h-gato h-gato-urgencia">B/. 24.00</td>
+            </tr>
+            <tr>
+              <th id="s-cirugia" scope="row">Cirugía menor</th>
+              <td headers="s-cirugia h-perro h-perro-regular">B/. 85.00</td>
+              <td headers="s-cirugia h-perro h-perro-urgencia">B/. 120.00</td>
+              <td headers="s-cirugia h-gato h-gato-regular">B/. 75.00</td>
+              <td headers="s-cirugia h-gato h-gato-urgencia">B/. 110.00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Recordatorio</h2>
+    <p>Agenda tus controles con antelación y lleva el carné de vacunación a cada visita.</p>
+  </aside>
+
+  <footer>
+    <p>Clínica Veterinaria ConSentidos — Santiago de Veraguas, Panamá</p>
+    <p>
+      Correo: <a href="mailto:contacto@consentidos.pa">contacto@consentidos.pa</a> ·
+      Teléfono: <a href="tel:+50760000000">+507 6000-0000</a>
+    </p>
+    <p><a href="#inicio">Volver arriba</a></p>
+  </footer>
+</body>
+</html>
