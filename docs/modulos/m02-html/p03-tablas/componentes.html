@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía de componentes HTML de la Clínica Veterinaria ConSentidos: texto, listas, enlaces, multimedia e interacción.">
+  <title>Guía de componentes — Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+  <script src="assets/js/componentes.js" defer></script>
+</head>
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="48" height="48">
+    <hgroup>
+      <h1>Guía de componentes</h1>
+      <p>Clínica Veterinaria ConSentidos</p>
+    </hgroup>
+    <p>Victorio Cibala · 4GS121-04</p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+
+    <h2>Componentes</h2>
+    <ul>
+      <li>
+        <a href="#texto">Texto</a>
+        <ul>
+          <li><a href="#encabezados">Encabezados</a></li>
+          <li><a href="#parrafo">Párrafo y salto de línea</a></li>
+          <li><a href="#enfasis">Énfasis</a></li>
+          <li><a href="#codigo">Código</a></li>
+          <li><a href="#tiempo">Fecha y hora</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#listas">Listas</a>
+        <ul>
+          <li><a href="#lista-ordenada">Lista ordenada</a></li>
+          <li><a href="#lista-no-ordenada">Lista no ordenada</a></li>
+          <li><a href="#lista-descripcion">Lista de descripción</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#enlaces">Enlaces</a>
+        <ul>
+          <li><a href="#enlace-interno">Otra página del sitio</a></li>
+          <li><a href="#enlace-externo">Sitio de terceros</a></li>
+          <li><a href="#enlace-descarga">Descarga</a></li>
+          <li><a href="#enlace-contacto">Correo y teléfono</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#multimedia">Imágenes y multimedia</a>
+        <ul>
+          <li><a href="#imagen-leyenda">Imagen con leyenda</a></li>
+          <li><a href="#audio">Audio</a></li>
+          <li><a href="#video">Video con subtítulos</a></li>
+          <li><a href="#iframe-propio">Página propia incrustada</a></li>
+          <li><a href="#iframe-terceros">Mapa incrustado</a></li>
+          <li><a href="#documento-pdf">Documento PDF incrustado</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#interactivos">Elementos interactivos</a>
+        <ul>
+          <li><a href="#acordeon">Preguntas frecuentes</a></li>
+          <li><a href="#medidor">Medidor</a></li>
+          <li><a href="#progreso">Barra de progreso</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <p>
+      Esta página reúne los elementos HTML que usa el sitio. De cada uno
+      se muestra cómo se ve, su código y, cuando hace falta, una nota.
+    </p>
+
+    <section id="texto">
+      <h2>Texto</h2>
+
+      <article id="encabezados">
+        <h3>Encabezados <code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></h3>
+        <p>Estructuran la jerarquía del documento como un índice de contenidos.</p>
+        <div class="demo">
+          <h4>Consulta general</h4>
+          <p>Revisión completa del estado de salud de tu mascota.</p>
+          <h5>Qué incluye</h5>
+          <p>Peso, temperatura, revisión de piel, oídos y dientes.</p>
+          <h6>Duración</h6>
+          <p>Treinta minutos, aproximadamente.</p>
+        </div>
+        <pre><code>&lt;h4&gt;Consulta general&lt;/h4&gt;
+&lt;p&gt;Revisión completa del estado de salud de tu mascota.&lt;/p&gt;
+&lt;h5&gt;Qué incluye&lt;/h5&gt;
+&lt;p&gt;Peso, temperatura, revisión de piel, oídos y dientes.&lt;/p&gt;
+&lt;h6&gt;Duración&lt;/h6&gt;
+&lt;p&gt;Treinta minutos, aproximadamente.&lt;/p&gt;</code></pre>
+        <aside>
+          <p><strong>Accesibilidad:</strong> no saltes niveles (de <code>&lt;h2&gt;</code> a <code>&lt;h4&gt;</code>) para conseguir un tamaño de letra; el tamaño lo decide el CSS. Los lectores de pantalla usan los encabezados para navegar.</p>
+        </aside>
+      </article>
+
+      <article id="parrafo">
+        <h3>Párrafo <code>&lt;p&gt;</code> y salto de línea <code>&lt;br&gt;</code></h3>
+        <p>El párrafo agrupa una idea completa. El salto de línea solo se usa cuando el corte forma parte del contenido, como en una dirección.</p>
+        <div class="demo">
+          <p>Atendemos perros, gatos y animales pequeños con citas de lunes a sábado.</p>
+          <p>
+            Clínica Veterinaria ConSentidos<br>
+            Avenida Central, Santiago de Veraguas<br>
+            Panamá
+          </p>
+        </div>
+        <pre><code>&lt;p&gt;Atendemos perros, gatos y animales pequeños con citas de lunes a sábado.&lt;/p&gt;
+&lt;p&gt;
+  Clínica Veterinaria ConSentidos&lt;br&gt;
+  Avenida Central, Santiago de Veraguas&lt;br&gt;
+  Panamá
+&lt;/p&gt;</code></pre>
+        <aside>
+          <p><strong>Buena práctica:</strong> no uses varios <code>&lt;br&gt;</code> seguidos para separar bloques; separa con párrafos y deja el espacio al CSS.</p>
+        </aside>
+      </article>
+
+      <article id="enfasis">
+        <h3>Énfasis <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code> y <code>&lt;mark&gt;</code></h3>
+        <p>Cada uno comunica un significado distinto, no solo un aspecto: importancia, énfasis de entonación y texto resaltado por su relevancia.</p>
+        <div class="demo">
+          <p>La vacuna antirrábica es <strong>obligatoria</strong> cada año.</p>
+          <p>Tu mascota <em>sí</em> necesita agua fresca, aunque no la pida.</p>
+          <p><mark>La guía de componentes</mark>, con el índice lateral y las demostraciones.</p>
+        </div>
+        <pre><code>&lt;p&gt;La vacuna antirrábica es &lt;strong&gt;obligatoria&lt;/strong&gt; cada año.&lt;/p&gt;
+&lt;p&gt;Tu mascota &lt;em&gt;sí&lt;/em&gt; necesita agua fresca, aunque no la pida.&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;La guía de componentes&lt;/mark&gt;, con el índice lateral y las demostraciones.&lt;/p&gt;</code></pre>
+      </article>
+
+      <article id="codigo">
+        <h3>Código <code>&lt;pre&gt;</code> y <code>&lt;code&gt;</code></h3>
+        <p>Muestra un fragmento técnico en línea o un bloque preformateado que conserva espacios y saltos de línea.</p>
+        <div class="demo">
+          <p>Para subir un nivel en las rutas relativas se escribe <code>../</code> al inicio.</p>
+          <pre><code>&lt;link rel="stylesheet" href="../assets/css/consentidos.css"&gt;</code></pre>
+        </div>
+        <pre><code>&lt;p&gt;Para subir un nivel en las rutas relativas se escribe &lt;code&gt;../&lt;/code&gt; al inicio.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;link rel="stylesheet" href="../assets/css/consentidos.css"&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+      </article>
+
+      <article id="tiempo">
+        <h3>Fecha y hora <code>&lt;time&gt;</code></h3>
+        <p>Combina una fecha legible para las personas con el atributo <code>datetime</code> legible por máquinas.</p>
+        <div class="demo">
+          <p>Próxima jornada de vacunación: <time datetime="2026-11-28">28 de noviembre de 2026</time>.</p>
+        </div>
+        <pre><code>&lt;p&gt;Próxima jornada de vacunación: &lt;time datetime="2026-11-28"&gt;28 de noviembre de 2026&lt;/time&gt;.&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+
+    <section id="listas">
+      <h2>Listas</h2>
+
+      <article id="lista-ordenada">
+        <h3>Lista ordenada <code>&lt;ol&gt;</code></h3>
+        <p>Enumera pasos donde el orden importa; toda sublista va siempre dentro del <code>&lt;li&gt;</code> correspondiente.</p>
+        <div class="demo">
+          <ol>
+            <li>Registro en recepción y revisión del carné.</li>
+            <li>
+              Triaje
+              <ol type="a">
+                <li>Peso en báscula.</li>
+                <li>Temperatura.</li>
+              </ol>
+            </li>
+            <li>Consulta con el veterinario.</li>
+            <li>Indicaciones por escrito y próxima cita.</li>
+          </ol>
+        </div>
+        <pre><code>&lt;ol&gt;
+  &lt;li&gt;Registro en recepción y revisión del carné.&lt;/li&gt;
+  &lt;li&gt;
+    Triaje
+    &lt;ol type="a"&gt;
+      &lt;li&gt;Peso en báscula.&lt;/li&gt;
+      &lt;li&gt;Temperatura.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Consulta con el veterinario.&lt;/li&gt;
+  &lt;li&gt;Indicaciones por escrito y próxima cita.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </article>
+
+      <article id="lista-no-ordenada">
+        <h3>Lista no ordenada <code>&lt;ul&gt;</code></h3>
+        <p>Agrupa elementos relacionados donde el orden no altera el significado.</p>
+        <div class="demo">
+          <ul>
+            <li>Orientación básica sobre alimentación e higiene.</li>
+            <li>Revisión del estado general del carné sanitario.</li>
+            <li>Recordatorio de próxima cita o jornada preventiva.</li>
+          </ul>
+        </div>
+        <pre><code>&lt;ul&gt;
+  &lt;li&gt;Orientación básica sobre alimentación e higiene.&lt;/li&gt;
+  &lt;li&gt;Revisión del estado general del carné sanitario.&lt;/li&gt;
+  &lt;li&gt;Recordatorio de próxima cita o jornada preventiva.&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+      </article>
+
+      <article id="lista-descripcion">
+        <h3>Lista de descripción <code>&lt;dl&gt;</code></h3>
+        <p>Asocia términos (<code>&lt;dt&gt;</code>) con sus definiciones (<code>&lt;dd&gt;</code>), ideal para glosarios.</p>
+        <div class="demo">
+          <dl>
+            <dt>Desparasitación</dt>
+            <dd>Tratamiento que elimina parásitos internos o externos.</dd>
+            <dt>Triaje</dt>
+            <dd>Revisión inicial que determina la urgencia de la atención.</dd>
+          </dl>
+        </div>
+        <pre><code>&lt;dl&gt;
+  &lt;dt&gt;Desparasitación&lt;/dt&gt;
+  &lt;dd&gt;Tratamiento que elimina parásitos internos o externos.&lt;/dd&gt;
+  &lt;dt&gt;Triaje&lt;/dt&gt;
+  &lt;dd&gt;Revisión inicial que determina la urgencia de la atención.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+      </article>
+    </section>
+
+    <section id="enlaces">
+      <h2>Enlaces</h2>
+
+      <article id="enlace-interno">
+        <h3>Otra página del sitio</h3>
+        <p>Conecta documentos dentro del mismo sitio usando rutas relativas claras y descriptivas.</p>
+        <div class="demo">
+          <p><a href="servicios.html">Consultar los servicios clínicos de ConSentidos</a></p>
+        </div>
+        <pre><code>&lt;p&gt;&lt;a href="servicios.html"&gt;Consultar los servicios clínicos de ConSentidos&lt;/a&gt;&lt;/p&gt;</code></pre>
+      </article>
+
+      <article id="enlace-externo">
+        <h3>Sitio de terceros</h3>
+        <p>Abre sitios externos en otra pestaña avisándolo en el texto y protegiendo la ventana con <code>rel="noopener noreferrer"</code>.</p>
+        <div class="demo">
+          <p>
+            <a href="https://www.mida.gob.pa" target="_blank" rel="noopener noreferrer">
+              Ministerio de Desarrollo Agropecuario (se abre en otra pestaña)
+            </a>
+          </p>
+        </div>
+        <pre><code>&lt;p&gt;
+  &lt;a href="https://www.mida.gob.pa" target="_blank" rel="noopener noreferrer"&gt;
+    Ministerio de Desarrollo Agropecuario (se abre en otra pestaña)
+  &lt;/a&gt;
+&lt;/p&gt;</code></pre>
+      </article>
+
+      <article id="enlace-descarga">
+        <h3>Descarga</h3>
+        <p>El atributo <code>download</code> indica al navegador que guarde el recurso en lugar de abrirlo directamente.</p>
+        <div class="demo">
+          <p><a href="assets/docs/guia-vacunacion.pdf" download>Descargar la guía de vacunación (PDF)</a></p>
+        </div>
+        <pre><code>&lt;p&gt;&lt;a href="assets/docs/guia-vacunacion.pdf" download&gt;Descargar la guía de vacunación (PDF)&lt;/a&gt;&lt;/p&gt;</code></pre>
+      </article>
+
+      <article id="enlace-contacto">
+        <h3>Correo y teléfono</h3>
+        <p>Los esquemas <code>mailto:</code> y <code>tel:</code> abren la aplicación de correo o llamada configurada en el dispositivo.</p>
+        <div class="demo">
+          <p>
+            Correo: <a href="mailto:contacto@consentidos.pa">contacto@consentidos.pa</a> ·
+            Teléfono: <a href="tel:+50760000000">+507 6000-0000</a>
+          </p>
+        </div>
+        <pre><code>&lt;p&gt;
+  Correo: &lt;a href="mailto:contacto@consentidos.pa"&gt;contacto@consentidos.pa&lt;/a&gt; ·
+  Teléfono: &lt;a href="tel:+50760000000"&gt;+507 6000-0000&lt;/a&gt;
+&lt;/p&gt;</code></pre>
+      </article>
+    </section>
+
+    <section id="multimedia">
+      <h2>Imágenes y multimedia</h2>
+
+      <article id="imagen-leyenda">
+        <h3>Imagen con leyenda <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h3>
+        <p>Asocia una ilustración o fotografía con su pie descriptivo, reservando sus dimensiones y carga diferida.</p>
+        <div class="demo">
+          <figure>
+            <img src="assets/img/luna.svg"
+              alt="Ilustración de Luna, una gata gris atigrada, sentada"
+              width="320" height="240" loading="lazy">
+            <figcaption>Luna, paciente del mes.</figcaption>
+          </figure>
+        </div>
+        <pre><code>&lt;figure&gt;
+  &lt;img src="assets/img/luna.svg"
+    alt="Ilustración de Luna, una gata gris atigrada, sentada"
+    width="320" height="240" loading="lazy"&gt;
+  &lt;figcaption&gt;Luna, paciente del mes.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+        <aside>
+          <p><strong>Buena práctica:</strong> el logotipo de la cabecera lleva <code>alt=""</code> vacío porque es decorativo y el nombre de la clínica ya está escrito al lado.</p>
+        </aside>
+      </article>
+
+      <article id="audio">
+        <h3>Audio <code>&lt;audio&gt;</code></h3>
+        <p>Reproduce pistas de sonido nativas con controles accesibles y enlace de descarga alternativo.</p>
+        <div class="demo">
+          <p id="etq-audio">Tono de recordatorio de citas:</p>
+          <audio controls preload="metadata" aria-labelledby="etq-audio">
+            <source src="assets/media/recordatorio.mp3" type="audio/mpeg">
+            Tu navegador no reproduce audio.
+            <a href="assets/media/recordatorio.mp3">Descarga el tono</a>.
+          </audio>
+        </div>
+        <pre><code>&lt;p id="etq-audio"&gt;Tono de recordatorio de citas:&lt;/p&gt;
+&lt;audio controls preload="metadata" aria-labelledby="etq-audio"&gt;
+  &lt;source src="assets/media/recordatorio.mp3" type="audio/mpeg"&gt;
+  Tu navegador no reproduce audio.
+  &lt;a href="assets/media/recordatorio.mp3"&gt;Descarga el tono&lt;/a&gt;.
+&lt;/audio&gt;</code></pre>
+      </article>
+
+      <article id="video">
+        <h3>Video con subtítulos <code>&lt;video&gt;</code> y <code>&lt;track&gt;</code></h3>
+        <p>Ofrece el video en dos formatos compatibles, imagen de portada y subtítulos en español mediante WebVTT.</p>
+        <div class="demo">
+          <video controls width="640" height="360" preload="metadata"
+            poster="assets/media/consejos-poster.jpg">
+            <source src="assets/media/consejos.webm" type="video/webm">
+            <source src="assets/media/consejos.mp4" type="video/mp4">
+            <track kind="subtitles" src="assets/media/consejos-es.vtt"
+              srclang="es" label="Español" default>
+            Tu navegador no reproduce video.
+            <a href="assets/media/consejos.mp4">Descarga el video</a>.
+          </video>
+        </div>
+        <pre><code>&lt;video controls width="640" height="360" preload="metadata"
+  poster="assets/media/consejos-poster.jpg"&gt;
+  &lt;source src="assets/media/consejos.webm" type="video/webm"&gt;
+  &lt;source src="assets/media/consejos.mp4" type="video/mp4"&gt;
+  &lt;track kind="subtitles" src="assets/media/consejos-es.vtt"
+    srclang="es" label="Español" default&gt;
+  Tu navegador no reproduce video.
+  &lt;a href="assets/media/consejos.mp4"&gt;Descarga el video&lt;/a&gt;.
+&lt;/video&gt;</code></pre>
+      </article>
+
+      <article id="iframe-propio">
+        <h3>Página propia incrustada <code>&lt;iframe&gt;</code></h3>
+        <p>Inserta otro documento del mismo sitio identificando la región con un <code>title</code> descriptivo.</p>
+        <div class="demo">
+          <iframe src="paginas/test.html"
+            title="Página de prueba del sitio de ConSentidos"
+            width="600" height="240" loading="lazy"></iframe>
+        </div>
+        <pre><code>&lt;iframe src="paginas/test.html"
+  title="Página de prueba del sitio de ConSentidos"
+  width="600" height="240" loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
+      </article>
+
+      <article id="iframe-terceros">
+        <h3>Mapa incrustado <code>&lt;iframe&gt;</code> con aislamiento</h3>
+        <p>Incrusta contenido externo restringiendo permisos mediante <code>sandbox</code> y ocultando el origen con <code>referrerpolicy</code>.</p>
+        <div class="demo">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-80.9950%2C8.0900%2C-80.9650%2C8.1100&amp;layer=mapnik"
+            title="Mapa de Santiago de Veraguas, donde está la clínica"
+            width="600" height="340" loading="lazy"
+            referrerpolicy="no-referrer"
+            sandbox="allow-scripts"></iframe>
+        </div>
+        <pre><code>&lt;iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-80.9950%2C8.0900%2C-80.9650%2C8.1100&amp;amp;layer=mapnik"
+  title="Mapa de Santiago de Veraguas, donde está la clínica"
+  width="600" height="340" loading="lazy"
+  referrerpolicy="no-referrer"
+  sandbox="allow-scripts"&gt;&lt;/iframe&gt;</code></pre>
+      </article>
+
+      <article id="documento-pdf">
+        <h3>Documento PDF incrustado <code>&lt;object&gt;</code></h3>
+        <p>Muestra un documento PDF directamente en la página y ofrece un enlace de respaldo si el navegador no lo soporta.</p>
+        <div class="demo">
+          <object data="assets/docs/guia-vacunacion.pdf"
+            type="application/pdf" width="600" height="400">
+            <p>Tu navegador no muestra PDF.
+            <a href="assets/docs/guia-vacunacion.pdf">Descarga la guía</a>.</p>
+          </object>
+        </div>
+        <pre><code>&lt;object data="assets/docs/guia-vacunacion.pdf"
+  type="application/pdf" width="600" height="400"&gt;
+  &lt;p&gt;Tu navegador no muestra PDF.
+  &lt;a href="assets/docs/guia-vacunacion.pdf"&gt;Descarga la guía&lt;/a&gt;.&lt;/p&gt;
+&lt;/object&gt;</code></pre>
+      </article>
+    </section>
+
+    <section id="interactivos">
+      <h2>Elementos interactivos</h2>
+
+      <article id="acordeon">
+        <h3>Preguntas frecuentes <code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code></h3>
+        <p>Crea un acordeón nativo sin JavaScript compartiendo el mismo atributo <code>name</code> entre los bloques.</p>
+        <div class="demo">
+          <details name="preguntas">
+            <summary>¿Cada cuánto debo desparasitar a mi perro?</summary>
+            <p>Cada tres meses, con la dosis que indique el veterinario.</p>
+          </details>
+          <details name="preguntas">
+            <summary>¿Necesito cita para vacunar?</summary>
+            <p>Sí. Así preparamos la vacuna y revisamos antes su carné.</p>
+          </details>
+        </div>
+        <pre><code>&lt;details name="preguntas"&gt;
+  &lt;summary&gt;¿Cada cuánto debo desparasitar a mi perro?&lt;/summary&gt;
+  &lt;p&gt;Cada tres meses, con la dosis que indique el veterinario.&lt;/p&gt;
+&lt;/details&gt;
+&lt;details name="preguntas"&gt;
+  &lt;summary&gt;¿Necesito cita para vacunar?&lt;/summary&gt;
+  &lt;p&gt;Sí. Así preparamos la vacuna y revisamos antes su carné.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+      </article>
+
+      <article id="medidor">
+        <h3>Medidor <code>&lt;meter&gt;</code></h3>
+        <p>Representa una medición escalar dentro de un rango conocido y con valores óptimos definidos.</p>
+        <div class="demo">
+          <p>
+            <label for="peso-luna">Peso de Luna</label>
+            <meter id="peso-luna" min="0" max="8" low="3" high="5"
+              optimum="4" value="4.2">4,2 kg</meter>
+            4,2 kg (rango saludable: 3 a 5 kg)
+          </p>
+        </div>
+        <pre><code>&lt;p&gt;
+  &lt;label for="peso-luna"&gt;Peso de Luna&lt;/label&gt;
+  &lt;meter id="peso-luna" min="0" max="8" low="3" high="5"
+    optimum="4" value="4.2"&gt;4,2 kg&lt;/meter&gt;
+  4,2 kg (rango saludable: 3 a 5 kg)
+&lt;/p&gt;</code></pre>
+      </article>
+
+      <article id="progreso">
+        <h3>Barra de progreso <code>&lt;progress&gt;</code> y salida <code>&lt;output&gt;</code></h3>
+        <p>Indica el avance de una tarea secuencial y actualiza su estado mediante controles de tipo botón.</p>
+        <div class="demo">
+          <p>
+            <label for="plan-vacunas">Plan de vacunación de Max</label>
+            <progress id="plan-vacunas" value="2" max="5">2 de 5 dosis</progress>
+            <output id="plan-texto" for="plan-vacunas">2 de 5 dosis</output>
+          </p>
+          <button type="button" id="btn-dosis">Registrar una dosis</button>
+          <button type="button" id="btn-reiniciar" hidden>Reiniciar el plan</button>
+        </div>
+        <pre><code>&lt;p&gt;
+  &lt;label for="plan-vacunas"&gt;Plan de vacunación de Max&lt;/label&gt;
+  &lt;progress id="plan-vacunas" value="2" max="5"&gt;2 de 5 dosis&lt;/progress&gt;
+  &lt;output id="plan-texto" for="plan-vacunas"&gt;2 de 5 dosis&lt;/output&gt;
+&lt;/p&gt;
+&lt;button type="button" id="btn-dosis"&gt;Registrar una dosis&lt;/button&gt;
+&lt;button type="button" id="btn-reiniciar" hidden&gt;Reiniciar el plan&lt;/button&gt;</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <aside>
+    <h2>Recordatorio</h2>
+    <p>Cada componente incluye descripción, demostración en vivo y código escapado.</p>
+  </aside>
+
+  <footer>
+    <p>Clínica Veterinaria ConSentidos — Santiago de Veraguas, Panamá</p>
+    <p>
+      Correo: <a href="mailto:contacto@consentidos.pa">contacto@consentidos.pa</a> ·
+      Teléfono: <a href="tel:+50760000000">+507 6000-0000</a>
+    </p>
+    <p><a href="#inicio">Volver arriba</a></p>
+  </footer>
+</body>
+</html>
